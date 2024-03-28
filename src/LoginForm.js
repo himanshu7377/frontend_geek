@@ -1,7 +1,5 @@
-// LoginForm.js
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
-
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -42,33 +40,38 @@ const LoginForm = () => {
   };
 
   return (
-    <Form onSubmit={handleLogin}>
-      <Form.Group controlId="formLoginEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control
-          type="email"
-          name="email"
-          placeholder="Enter email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-      </Form.Group>
-      <Form.Group controlId="formLoginPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleChange}
-          required
-        />
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Login
-      </Button>
-    </Form>
+    <div style={{ width: '500px', margin: 'auto',marginTop:'90px' }}>
+      <h1 className="text-center">LOGIN</h1>
+      <Form onSubmit={handleLogin}>
+        <Form.Group controlId="formLoginEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control
+            type="email"
+            name="email"
+            placeholder="Enter email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </Form.Group>
+        <Form.Group controlId="formLoginPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+        </Form.Group>
+        <div className="text-center mt-4">
+          <Button variant="primary" type="submit" style={{ width: '200px' }}>
+            Login
+          </Button>
+        </div>
+      </Form>
+    </div>
   );
 };
 
